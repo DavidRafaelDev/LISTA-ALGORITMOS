@@ -1,0 +1,64 @@
+<!-- 7. Crie um programa em HTML/JS o qual:
+
+a) Tenha uma combo com todos os meses do ano
+
+b) Após alterar o valor da combo, exiba abaixo dela o nome uma imagem da estação do ano mais provável
+
+c) Considere que o clima é no hemisfério norte, ou seja:
+
+    Primavera: março, abril e maio.
+    Verão: junho, julho e agosto.
+    Outono: setembro, outubro e novembro.
+    Inverno: dezembro, janeiro e fevereiro.
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>David 07</title>
+ </head>
+ <body>
+     <select onchange="estacao()" name="select" id="select">
+         <option value="0"> - Selecione o mês - </option>
+         <option value="4">Janeiro</option>
+         <option value="4">Fevereiro</option>
+         <option value="1">Março</option>
+         <option value="1">Abril</option>
+         <option value="1">maio</option>
+         <option value="2">Junho</option>
+         <option value="2">Julho</option>
+         <option value="2">Agosto</option>
+         <option value="3">Setembro</option>
+         <option value="3">Outubro</option>
+         <option value="3">Novembro</option>
+         <option value="4">Dezembro</option>
+     </select>
+     <br><br>
+     <div id="alerta"></div>
+     <img src="" id="imagem" alt="">
+ </body>
+ </html>
+ <script>
+     function estacao (){
+         selecionado = select.value;
+         if(selecionado == 0){
+             alerta.innerHTML = "Escolha um mês";
+             imagem.src = "";
+         }else if (selecionado == 4){
+             alerta.innerHTML = "";
+             imagem.src = "img/verao.jpg"
+         }else if (selecionado == 1){
+            alerta.innerHTML = "";
+             imagem.src = "img/primavera.jpg"
+         }else if (selecionado == 2){
+            alerta.innerHTML = "";
+             imagem.src = "img/inverno.jpg"
+         }else{
+            alerta.innerHTML = "";
+             imagem.src = "img/outono.jpg"
+         }
+         
+     }
+ </script>

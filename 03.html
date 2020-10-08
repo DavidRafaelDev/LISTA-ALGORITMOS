@@ -1,0 +1,33 @@
+<!-- 3. Melhore o programa da questão anterior de tal forma que:
+
+a) Caso a nota digitada for menor que 0 ou maior que 10, exiba a mensagem
+
+"Nota X é inválida!", onde X é anota informada. Texto sempre na cor preta. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03  David Rafael</title>
+</head>
+<body>
+    Digite sua nota <input type="text" id="nota"> <button onclick="calcula()">Classifica aluno</button><br>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function calcula(){
+        nota = Number(nota.value);
+        if(nota < 5 ){
+            resultado.innerHTML = '<span style=color:red>Aluno precisa de muita ajuda</span>';
+        }else if(nota >= 5 && nota <= 7){
+            resultado.innerHTML = '<span style = color:orange>Aluno na media</span>'
+        }else if(nota >7 && nota <=9.5){
+            resultado.innerHTML = '<span style = color:green> Aluno acima da media </span>'
+        }else if (nota > 9.5 && nota <= 10){
+            resultado.innerHTML = '<span style = color:blue> Aluno fora da curva </span>'
+        }else if(nota >10 || nota < 0 ){ // Nessa comparação usei o operador || para não criar dois if
+            resultado.innerHTML = `Nota ${nota} é inválida !!`
+        }
+    }
+</script>

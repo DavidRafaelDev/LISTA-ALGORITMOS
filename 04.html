@@ -1,0 +1,45 @@
+<!-- 4. Crie um programa o qual:
+a) Pergunte numa combo, qual time grande São Paulo o usuáro torce. Use uma combo.
+b) Ao clicar em "Fale sobre esse time", exiba abaixo:
+   "Salve o Corinthians" com fundo preto e letra branca, se for Corinthians
+   "Salve o alviverde imponente" com fundo verde e letra branca, se for Palmeiras
+   "Agora que dá a bola é o Santos" com fundo branco e letra preta, se for Santos
+   "Salve o Tricolor paulista" com fundo preto e letra vermelha, se for São Paulo -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David 04</title>
+</head>
+<body>
+    <select name="select" id="timeEscolhido">
+        <option value="0">- Escolha seu time - </option>
+        <option value="1">Corinthians</option>
+        <option value="2">Palmeiras</option>
+        <option value="3">Santos</option>
+        <option value="4">São Paulo</option>
+    </select>
+    <br><br>
+    <button onclick="time()">Fale sobre esse time !</button>
+    <hr>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function time(){
+        var opcao = timeEscolhido.value;
+        if(opcao == 0){
+            alert("Escolha um time");
+        }else if (opcao == 1){
+            resultado.innerHTML = '<span style = background-color:black;color:white>Salve o Corinthians</span>';
+        }else if (opcao == 2){
+            resultado.innerHTML = '<span style = background-color:green;color:white>Salve o alviverde imponente</span>';
+        }else if (opcao == 3){
+            resultado.innerHTML = 'Agora que dá a bola é o Santos';
+        }else if (opcao == 4){
+            resultado.innerHTML = '<span style = background-color:black;color:red>Salve o Tricolor paulista</span>'
+        }
+    }
+</script>

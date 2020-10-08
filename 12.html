@@ -1,0 +1,67 @@
+<!-- 3. Crie um programa em HTML/JS que verifique se o usuário é vegano ou não.
+
+a) Numa combo pergunte o que ele come no café da manhã, tendo as opções
+    ovos
+    leite de arroz
+    bacon
+
+b) Numa outra combo pergunte o que ele come no almoço, tendo as opções
+    bife
+    hamburger de soja
+    frango grelhado
+
+c) Numa outra combo pergunte o que ele come na janta, tendo as opções
+
+    picanha de soja
+    cupim
+    coração
+
+ 
+
+d) Ao clicar no botão "Sou vegano", aparece um alert com uma dessas frases:
+    "Sim, você é vegano!", caso ele consuma leite de arroz no café, hamburger de soja no almoço e 
+    picanha de soja na janta
+
+    "Não, você não é vegano", caso contrário -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>David 12</title>
+    </head>
+    <body>
+        café da manhã
+        <select name="" id="manha">
+            <option value="0">Ovo</option>
+            <option value="1">Leite de arroz</option>
+            <option value="0">Bacnon</option>
+        </select>
+        <br><br>
+        Almoço
+        <select name="" id="tarde">
+            <option value="0">Bife</option>
+            <option value="1">Hamburger de soja</option>
+            <option value="">Frango grelhado</option>
+        </select>
+        <br><br>
+        janta
+        <select name="" id="noite">
+            <option value="1">Picanha de soja</option>
+            <option value="0">Cupim</option>
+            <option value="0">Coração</option>
+        </select>
+        <br><br>
+        <button onclick="vegano()">Sou vegano</button>
+    </body>
+    </html>
+    <script>
+        function vegano(){
+            if(manha.value == 1 && tarde.value == 1 && noite.value == 1){
+                alert("Sim, você é vegano !");
+            }else{
+                alert("Não, você não é vegano");
+            }
+        }
+    </script>

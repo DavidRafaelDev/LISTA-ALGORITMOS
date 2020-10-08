@@ -1,0 +1,120 @@
+<!-- 9 (desafio). Crie um pequeno sistema de avaliação de atendimento em HTML/JS o qual:
+
+a) Tem cinco botões: "Nota 1", "Nota 2", "Nota 3", "Nota 4" e "Nota 5"
+
+b) Abaixo deles, um texto: "Sua avaliação:"
+
+c) Cada vez que o usuário for clicando em um dos botões, é atualizada a média de todas as avaliações
+ recebidas, e o texto em b) se atualiza para algo como "Sua avaliação: 3.4" (use sempre 1 casa decimal)
+
+d) De acordo com a média atual, exiba ou altere uma figura abaixo de tudo, que pode ser:
+
+    De alguém chorando ou desesperado, caso a média esteja abaixo de 2.
+    De alguém "neutro", caso a média esteja entre 2 e 3.
+    De alguém feliz, caso a média seja entre mais de 3 e 4.5.
+    De radiante, mega feliz, caso a média esteja acima de 4.5.
+
+  -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Desafio 09 !</title>
+  </head>
+  <body>
+      <button onclick="nota1()">Nota 1</button>
+      <button onclick="nota2()">Nota 2</button>
+      <button onclick="nota3()">Nota 3</button>
+      <button onclick="nota4()">Nota 4</button>
+      <button onclick="nota5()">Nota 5</button>
+      <br><br>
+      <div id="mensagem">Sua avaliação: </div>
+      <br><br>
+      <img src="" id="imagem" alt="">
+  </body>
+  </html>
+  <script>
+    var n1 = 0;
+    var n2 = 0;
+    var n3 = 0;
+    var n4 = 0;
+    var n5 = 0;
+    var media = 0
+
+    function nota1() {
+        n1++;
+        media = (n1+n2+n3+n4+n5)/5;
+        mensagem.innerHTML = "Sua avaliação: "+ media;
+        if(media < 2){
+            imagem.src = "img/triste.png"
+        }else if(media >= 2 && media <3){
+            imagem.src = "img/neutro.png"
+        }else if (media >= 3 && media <4.5){
+            imagem.src = "img/feliz.png"
+        }else{
+            imagem.src = "img/feliz2.png"
+        }
+    }
+
+    function nota2() {
+        n2++;
+        media = (n1+n2+n3+n4+n5)/5;
+        mensagem.innerHTML = "Sua avaliação: "+ media;
+        if(media < 2){
+            imagem.src = "img/triste.png"
+        }else if(media >= 2 && media <3){
+            imagem.src = "img/neutro.png"
+        }else if (media >= 3 && media <4.5){
+            imagem.src = "img/feliz.png"
+        }else{
+            imagem.src = "img/feliz2.png"
+        }
+    }
+
+    function nota3() {
+        n3++
+        media = (n1+n2+n3+n4+n5)/5;
+        mensagem.innerHTML = "Sua avaliação: "+ media;
+        if(media < 2){
+            imagem.src = "img/triste.png"
+        }else if(media >= 2 && media <3){
+            imagem.src = "img/neutro.png"
+        }else if (media >= 3 && media <4.5){
+            imagem.src = "img/feliz.png"
+        }else{
+            imagem.src = "img/feliz2.png"
+        }
+    }
+
+    function nota4() {
+        n4++
+        media = (n1+n2+n3+n4+n5)/5;
+        mensagem.innerHTML = "Sua avaliação: "+ media;
+        if(media < 2){
+            imagem.src = "img/triste.png"
+        }else if(media >= 2 && media <3){
+            imagem.src = "img/neutro.png"
+        }else if (media >= 3 && media <4.5){
+            imagem.src = "img/feliz.png"
+        }else{
+            imagem.src = "img/feliz2.png"
+        }
+    }
+
+    function nota5() {
+        n5++
+        media = (n1+n2+n3+n4+n5)/5;
+        mensagem.innerHTML = "Sua avaliação: "+ media;
+        if(media < 2){
+            imagem.src = "img/triste.png"
+        }else if(media >= 2 && media <3){
+            imagem.src = "img/neutro.png"
+        }else if (media >= 3 && media <4.5){
+            imagem.src = "img/feliz.png"
+        }else{
+            imagem.src = "img/feliz2.png"
+        }
+        
+    }
+</script>

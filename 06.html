@@ -1,0 +1,47 @@
+<!-- 6. Melhore o programa da questão anterior de tal forma que:
+
+a) No caso da primeira mensagem, apareça também na tela a imagem de uma pessoa em forma
+
+b) No caso da segunda mensagem, apareça também na tela a imagem de uma pessoa levemente acima do peso ideal
+
+c) No caso da terceira mensagem, apareça também na tela a imagem de uma pessoa bem acima do peso ideal -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David 06</title>
+</head>
+<body>
+    Pão francês por dia <input type="text" id="pao"><br><br>
+    Bolacha recheada por dia <input type="text" id="bolacha"><br><br>
+    Copos de achocolatado por dia <input type="text" id="achocolatado"><br><br>
+    <button onclick="calorias()">Verificar calorias</button>
+    <br><br>
+    <div id="resultado"></div><br><br>
+    <img src="" id="imagem" alt="">
+</body>
+</html>
+<script>
+    function calorias(){
+        paoC = Number(pao.value) * 50 ;
+        bolachaC = Number(bolacha.value * 80);
+        achocolatadoC = Number(achocolatado.value * 70);
+        totalC = paoC+achocolatadoC+bolachaC;
+
+        if (totalC < 200){
+            resultado.innerHTML = `Total de calorias ${totalC} <br>
+            Parabéns, vai sair em forma da quarentena! `;
+            imagem.src = "img/magro.jpg";
+        }else if (totalC >= 200 && totalC <= 400){
+            resultado.innerHTML = `Total de calorias ${totalC} <br>
+            Cuidado, vai ficar mais "fofinho(a)" após quarentena!`;
+            imagem.src = "img/medio.png";
+        }else{
+            resultado.innerHTML = `Total de calorias ${totalC} <br>
+            Bom, acho que muitos não vão te reconhecer após a quarentena`;
+            imagem.src = "img/gordo.png";
+        }
+    }
+</script>

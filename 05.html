@@ -1,0 +1,59 @@
+<!-- 5. Olivia Letória é nutricionisa e precisa ajudar seus pacientes a não engordarem tanto na 
+quarentena do Covid19. Ajude ela criando um programa em HTML/JS o qual:
+
+a) Pergunte quantos pães franceses o usuário tem comido por dia
+b) Pergunte quantos pacotes de bolacha recheada o usuário tem comido por dia
+c) Pergunte quantos copos de achocolatado o usuário tem tomado por dia
+d) Ao clicar em "Verificar calorias", calcule quantas calorias o usuário tem consumido com base nas 3 
+informações. Considere que um pão francês tem 50 calorias, um pacote de bolacha 80, e um copo de 
+achocolatado 70.
+e) Após fazer o cálculo, exiba uma dessas frases, abaixo do botão:
+   "Parabéns, vai sair em forma da quarentena!", caso as calorias sejam menores do que 200.
+
+   "Cuidado, vai ficar mais "fofinho(a)" após quarentena!", caso as calorias sejam entre 200 e 400.
+
+   "Bom, acho que muitos não vão te reconhecer após a quarentena", caso as calorias sejam mais de 400.
+f) Faça o teste de mesa para essa questão
+-teste de mesa-
+valor 1 - valor 2 - valor 3 - resultado esperado
+  1    -     0    -    1    -  Parabéns, vai sair em forma da quarentena!
+  1    -     1    -    1    -  Cuidado, vai ficar mais "fofinho(a)" após quarentena!
+  8    -     8    -    9    -  Cuidado, vai ficar mais "fofinho(a)" após quarentena!
+  
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David 05</title>
+</head>
+<body>
+    Pão francês por dia <input type="text" id="pao"><br><br>
+    Bolacha recheada por dia <input type="text" id="bolacha"><br><br>
+    Copos de achocolatado por dia <input type="text" id="achocolatado"><br><br>
+    <button onclick="calorias()">Verificar calorias</button>
+    <br><br>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function calorias(){
+        paoC = Number(pao.value) * 50 ;
+        bolachaC = Number(bolacha.value * 80);
+        achocolatadoC = Number(achocolatado.value * 70);
+        totalC = paoC+achocolatadoC+bolachaC;
+
+        if (totalC < 200){
+            resultado.innerHTML = `Total de calorias ${totalC} <br>
+            Parabéns, vai sair em forma da quarentena!`
+        }else if (totalC >= 200 && totalC <= 400){
+            resultado.innerHTML = `Total de calorias ${totalC} <br>
+            Cuidado, vai ficar mais "fofinho(a)" após quarentena!`
+        }else{
+            resultado.innerHTML = `Total de calorias ${totalC} <br>
+            Bom, acho que muitos não vão te reconhecer após a quarentena`
+        }
+    }
+</script>

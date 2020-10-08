@@ -1,0 +1,37 @@
+<!-- 2. Melhore o programa da questão anterior de tal forma que:
+
+a) As mensagens sejam exibidas na própria página, logicamente apenas uma por vez. Sempre abaixo do botão
+
+b) A primeira mensagem deve estar sempre com o texto na cor vermelha
+
+c) A segunda mensagem deve estar sempre com o texto na cor laranja
+
+d) A terceira mensagem deve estar sempre com o texto na cor verde
+
+e) A quarta mensagem deve estar sempre com o texto na cor azul -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02  David Rafael</title>
+</head>
+<body>
+    Digite sua nota <input type="text" id="nota"> <button onclick="calcula()">Classifica aluno</button><br>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function calcula(){
+        nota = Number(nota.value);
+        if(nota < 5 ){
+            resultado.innerHTML = '<span style=color:red>Aluno precisa de muita ajuda</span>';
+        }else if(nota >= 5 && nota <= 7){
+            resultado.innerHTML = '<span style = color:orange>Aluno na media</span>'
+        }else if(nota >7 && nota <=9.5){
+            resultado.innerHTML = '<span style = color:green> Aluno acima da media </span>'
+        }else if (nota > 9.5){
+            resultado.innerHTML = '<span style = color:blue> Aluno fora da curva </span>'
+        }
+    }
+</script>
