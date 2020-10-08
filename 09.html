@@ -14,6 +14,9 @@ d) De acordo com a média atual, exiba ou altere uma figura abaixo de tudo, que 
     De alguém feliz, caso a média seja entre mais de 3 e 4.5.
     De radiante, mega feliz, caso a média esteja acima de 4.5.
 
+
+    Como enviei com tempo resolvi desafiar um pouco mais o desafio mostrando o valor de todas as notas
+    limitando notas até no maximo 10 e adicionando botão zerar
   -->
   <!DOCTYPE html>
   <html lang="en">
@@ -28,7 +31,13 @@ d) De acordo com a média atual, exiba ou altere uma figura abaixo de tudo, que 
       <button onclick="nota3()">Nota 3</button>
       <button onclick="nota4()">Nota 4</button>
       <button onclick="nota5()">Nota 5</button>
+      <button onclick="zerar()">Zerar</button>
       <br><br>
+      <div id="div1">Nota 1:</div><br>
+      <div id ="div2">Nota 2:</div><br>
+      <div id="div3">Nota 3:</div><br>
+      <div id="div4">Nota 4:</div><br>
+      <div id=div5>Nota 5:</div><br>
       <div id="mensagem">Sua avaliação: </div>
       <br><br>
       <img src="" id="imagem" alt="">
@@ -55,6 +64,13 @@ d) De acordo com a média atual, exiba ou altere uma figura abaixo de tudo, que 
         }else{
             imagem.src = "img/feliz2.png"
         }
+        div1.innerHTML = `Nota 1: ${n1}`;
+        if(n1 > 10){
+            alert("Nota maxima atingida")
+            n1 = 10;
+            div1.innerHTML = `Nota 1: ${n1}`;
+            
+        }
     }
 
     function nota2() {
@@ -69,6 +85,13 @@ d) De acordo com a média atual, exiba ou altere uma figura abaixo de tudo, que 
             imagem.src = "img/feliz.png"
         }else{
             imagem.src = "img/feliz2.png"
+        }
+        div2.innerHTML = `Nota 2: ${n2}`;
+        if(n2 > 10){
+            alert("Nota maxima atingida")
+            n2 = 10;
+            div2.innerHTML = `Nota 2: ${n2}`;
+
         }
     }
 
@@ -85,12 +108,17 @@ d) De acordo com a média atual, exiba ou altere uma figura abaixo de tudo, que 
         }else{
             imagem.src = "img/feliz2.png"
         }
+        div3.innerHTML = `Nota 3: ${n3}`;
+        if(n3 > 10){
+            alert("Nota maxima atingida")
+            n3 = 10;
+            div3.innerHTML = `Nota 3: ${n3}`
+        }
     }
 
     function nota4() {
         n4++
         media = (n1+n2+n3+n4+n5)/5;
-        mensagem.innerHTML = "Sua avaliação: "+ media;
         if(media < 2){
             imagem.src = "img/triste.png"
         }else if(media >= 2 && media <3){
@@ -99,6 +127,12 @@ d) De acordo com a média atual, exiba ou altere uma figura abaixo de tudo, que 
             imagem.src = "img/feliz.png"
         }else{
             imagem.src = "img/feliz2.png"
+        }
+        div4.innerHTML = `Nota 4: ${n4}`;
+        if(n4 > 10){
+            alert("Nota maxima atingida")
+            n4 = 10;
+            div4.innerHTML = `Nota 4: ${n4}`;
         }
     }
 
@@ -115,6 +149,28 @@ d) De acordo com a média atual, exiba ou altere uma figura abaixo de tudo, que 
         }else{
             imagem.src = "img/feliz2.png"
         }
-        
+        div5.innerHTML = `Nota 5: ${n5}`;
+        if(n5 > 10){
+            alert("Nota maxima atingida")
+            n5 = 10;
+            div5.innerHTML = `Nota 5: ${n5}`;
+
+        }
+    }
+    function zerar(){
+        n1 = 0;
+        n2 = 0;
+        n3 = 0;
+        n4 = 0;
+        n5 = 0;
+        media = 0
+
+        div1.innerHTML = "Nota 1:";
+        div2.innerHTML = "Nota 2:";
+        div3.innerHTML = "Nota 3:";
+        div4.innerHTML = "Nota 4:";
+        div5.innerHTML = "Nota 5:"
+        mensagem.innerHTML = "Sua avaliação:"
+        imagem.src = ""
     }
 </script>
